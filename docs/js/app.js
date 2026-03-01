@@ -178,6 +178,10 @@ function renderCards() {
             `<span class="tag" data-tag="${t}">${t}</span>`
         ).join('');
 
+        const nlmBadge = paper.notebooklm_url
+            ? `<a class="nlm-badge" href="${paper.notebooklm_url}" target="_blank" rel="noopener" title="Open in NotebookLM">📓 Deep Notes</a>`
+            : '';
+
         card.innerHTML = `
       <div class="card-header">
         <span class="journal-badge journal-${slug}">${paper.journal}</span>
@@ -188,7 +192,10 @@ function renderCards() {
       <p class="card-abstract">${paper.abstract || ''}</p>
       <div class="card-footer">
         <div class="card-tags">${tagsHtml}</div>
-        <div class="star-rating">${stars}</div>
+        <div class="card-footer-right">
+          ${nlmBadge}
+          <div class="star-rating">${stars}</div>
+        </div>
       </div>`;
 
         // Tag click filters
@@ -200,6 +207,12 @@ function renderCards() {
                 renderCards();
             });
         });
+
+        // NLM badge — open notebook without navigating the card
+        const badge = card.querySelector('.nlm-badge');
+        if (badge) {
+            badge.addEventListener('click', (e) => e.stopPropagation());
+        }
 
         grid.appendChild(card);
     });

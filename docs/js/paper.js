@@ -118,6 +118,20 @@ function renderPaper(paper, base) {
             `<span class="tag">${t}</span>`
         ).join('');
     }
+
+    // NotebookLM deep notes
+    const nlmSection = document.getElementById('section-nlm');
+    const nlmNotes = document.getElementById('paper-nlm-notes');
+    const nlmLink = document.getElementById('nlm-open-link');
+    if (nlmSection && paper.notebooklm_notes) {
+        nlmSection.style.display = '';
+        if (nlmNotes) setHTML('paper-nlm-notes', parseMarkdown(paper.notebooklm_notes));
+        if (nlmLink && paper.notebooklm_url) {
+            nlmLink.href = paper.notebooklm_url;
+        } else if (nlmLink) {
+            nlmLink.style.display = 'none';
+        }
+    }
 }
 
 // ── Simple Markdown Parser ────────────────────────────────────
