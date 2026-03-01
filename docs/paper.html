@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8" />
@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>" />
+    <!-- Apply saved theme immediately to prevent flash -->
+    <script>
+        (function () { var t = localStorage.getItem('pn-theme') || 'light'; document.documentElement.setAttribute('data-theme', t); })();
+    </script>
 </head>
 
 <body>
@@ -20,12 +24,18 @@
                 <div class="logo-icon">📚</div>
                 <div>
                     <span class="logo-text">Paper Notebook</span>
-                    <span class="logo-sub">Jingjing Zhai · Buckler Lab</span>
+                    <span class="logo-sub">Jingjing Zhai</span>
                 </div>
             </a>
             <ul class="nav-links">
                 <li><a href="index.html">← All Papers</a></li>
                 <li><a href="https://github.com/zhaijj/jingjing-paper-notebook" target="_blank">GitHub</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode">
+                        <span class="toggle-icon">🌙</span>
+                        <span class="toggle-label">Dark</span>
+                    </button>
+                </li>
             </ul>
         </div>
     </nav>
@@ -44,24 +54,18 @@
                     Back to all papers
                 </a>
 
-                <!-- Color accent bar -->
                 <div id="paper-color-bar" style="height:3px; border-radius:2px; margin:24px 0 20px; max-width:200px;">
                 </div>
 
-                <!-- Meta row: journal + year -->
                 <div class="paper-meta-row">
                     <span id="paper-journal-badge"></span>
                     <span id="paper-year"></span>
                     <div class="star-rating" id="paper-stars"></div>
                 </div>
 
-                <!-- Title -->
                 <h1 class="paper-title" id="paper-title">Loading…</h1>
-
-                <!-- Authors -->
                 <p class="paper-authors" id="paper-authors"></p>
 
-                <!-- Action buttons -->
                 <div class="paper-links">
                     <a id="btn-doi" href="#" target="_blank" class="btn btn-primary">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -90,8 +94,6 @@
 
                 <!-- MAIN COLUMN -->
                 <div class="content-main">
-
-                    <!-- Abstract -->
                     <div class="section-card">
                         <div class="section-label">
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -104,7 +106,6 @@
                         <p class="abstract-text" id="paper-abstract"></p>
                     </div>
 
-                    <!-- Notes -->
                     <div class="section-card">
                         <div class="section-label">
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -116,13 +117,10 @@
                         </div>
                         <div class="notes-content" id="paper-notes"></div>
                     </div>
-
                 </div>
 
                 <!-- SIDEBAR -->
                 <div class="content-side">
-
-                    <!-- Info card -->
                     <div class="section-card">
                         <div class="section-label">Info</div>
                         <div class="info-row"><span class="info-key">Journal</span><span class="info-val"
@@ -137,12 +135,10 @@
                                 id="info-added"></span></div>
                     </div>
 
-                    <!-- Tags card -->
                     <div class="section-card">
                         <div class="section-label">Tags</div>
                         <div class="tags-cloud" id="paper-tags-cloud"></div>
                     </div>
-
                 </div>
 
             </div>
@@ -155,12 +151,13 @@
         <div class="container">
             <p>
                 Maintained by <a href="https://github.com/zhaijj" target="_blank">Jingjing Zhai</a> ·
-                <a href="https://github.com/bucklerlab" target="_blank">Buckler Lab</a> ·
-                Built with 💚 and plain HTML
+                Built with 💚 and plain HTML ·
+                <a href="https://github.com/zhaijj/jingjing-paper-notebook" target="_blank">View on GitHub</a>
             </p>
         </div>
     </footer>
 
+    <script src="js/theme.js"></script>
     <script src="js/paper.js"></script>
 
 </body>
