@@ -4,7 +4,7 @@ A personal, agent-driven academic website for collecting, summarizing, and displ
 
 This repository contains both a **static frontend website** to beautifully showcase your reading list, and a suite of **Agentic Skills** that use Model Context Protocol (MCP) to autonomously discover, summarize, and link new papers.
 
-![Preview of the Website Layout](docs/images/preview.png) *(Note: You can add a screenshot here later)*
+![Preview of the Website Layout](docs/images/preview.png)
 
 ## ✨ Features
 
