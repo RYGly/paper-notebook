@@ -197,30 +197,26 @@
     "source": "MBE"
   },
   {
-    "id": "vijay2018population",
-    "title": "Population Genomic Analysis Reveals Contrasting Demographic Changes of Two Closely Related Dolphin Species in the Last Glacial",
+    "id": "narayanan2026codon",
+    "title": "Pichia-CLM: A language model–based codon optimization pipeline for Komagataella phaffii",
     "authors": [
-      "Nagarjun Vijay",
-      "Chungoo Park",
-      "Jooseong Oh",
-      "Soyeong Jin",
-      "Elizabeth Kern",
-      "Hyun Woo Kim",
-      "Jianzhi Zhang",
-      "Joong-Ki Park"
+      "Harini Narayanan",
+      "J. Christopher Love"
     ],
-    "journal": "MBE",
-    "year": 2018,
-    "doi": "10.1093/molbev/msy108",
+    "journal": "PNAS",
+    "year": 2026,
+    "doi": "10.1073/pnas.2522052123",
     "tags": [
-      "population genomics",
-      "demography",
-      "evolution"
+      "codon optimization",
+      "language models",
+      "Pichia-CLM",
+      "Komagataella phaffii",
+      "recombinant proteins"
     ],
     "rating": 3,
-    "abstract": "Population genomic data can be used to infer historical effective population sizes (Ne), which help study the impact of past climate changes on biodiversity. We generated whole-genome sequences of the common bottlenose dolphin (Tursiops truncatus) and the Indo-Pacific bottlenose dolphin (T. aduncus) to compare their demographic histories. Despite being closely related, the two species exhibited contrasting demographic changes during the Last Glacial period.",
-    "notes": "## Key Findings\n\n- Used whole-genome sequences to infer historical effective population sizes (Ne).\n- Found contrasting demographic changes between two closely related dolphin species during the Last Glacial period.\n- Highlights how related species can have divergent evolutionary responses to the same climatic events.\n\n## Relevance to Our Work\n\nWhile focused on marine mammals, the demographic inference frameworks and population genomic methodologies used here are highly applicable to studying the demographic histories and evolutionary trajectories of plant species.\n\n## Methods Worth Noting\n\n- Estimation of historical effective population sizes (Ne) from whole-genome sequences.\n- Comparative demography of closely related species.\n\n## Questions / Follow-ups\n\n- [ ] What specific software pipelines (e.g., PSMC, MSMC) were used for demographic inference?\n- [ ] How did they handle phasing and structural variants in non-model organisms?",
+    "abstract": "The preference in synonymous codon usage—the so-called codon usage bias (CUB)—is governed by several factors such as the host organism, context and function of the gene, and the position of the codon within the gene itself. We demonstrated that this mapping can be learned from the host’s genome using language models and subsequently applied for codon optimization of heterologous proteins expressed by the host. This pipeline called Pichia–Codon language model (Pichia-CLM) was applied to the industrial host organism, Komagataella phaffii. With this approach, production of heterologous proteins was enhanced up to threefold compared to their native sequences. Furthermore, Pichia-CLM consistently yielded constructs with enhanced productivity for proteins of varied complexity, compared to commercially available tools. Finally, we showed that Pichia-CLM generates sequences resembling the properties of codon usage found in the host’s intrinsic host cell proteins and learned features such as avoiding negative cis-regulatory and repeat elements based on patterns in the genome data. These results show the potential of language models to unbiasedly learn patterns and design robust sequences for improved protein production.",
+    "notes": "## Key Findings\n\n- Developed Pichia-CLM, a GRU-based language model for codon optimization in *Komagataella phaffii*.\n- Outperformed commercial tools in enhancing heterologous protein production.\n- Demonstrated that the model learned meaningful physicochemical encodings for amino acids and codons without explicit supervision.\n\n## Relevance to Our Work\n\nThis paper is highly relevant to our interest in DNA language models as it demonstrates a practical application of sequence modeling for codon optimization. It shows how language models can learn species-specific genomic patterns better than traditional codon usage bias metrics.\n\n## Methods Worth Noting\n\n- Gated Recurrent Unit (GRU) based encoder-decoder architecture.\n- Bayesian hyperparameter optimization.\n- Experimental validation across six different proteins and comparison with four commercial tools.\n\n## Questions / Follow-ups\n\n- [ ] Could similar GRU-based architectures be efficient for plant-specific genomic sequence models compared to transformers?\n- [ ] How does the performance scale when designing constructs for larger, more complex multimeric proteins?",
     "addedDate": "2026-03-02",
-    "source": "MBE"
+    "source": "PNAS"
   }
 ]
