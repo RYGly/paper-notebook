@@ -313,13 +313,17 @@ def rebuild_blog_listing(blogs: list, blog_html_path: str):
     )
 
     # Also update the hero description
+    placeholder = 'A space for longer-form writing on plant genomics, DNA language models, and AI \u2014 coming soon.'
     if blogs:
         post_word = 'post' if len(blogs) == 1 else 'posts'
-        content = re.sub(
-            r'(<p>)(A space for longer-form writing[^<]*|[0-9]+ post[s]? published[^<]*)(</p>)',
-            f'\\g<1>{len(blogs)} {post_word} published on plant genomics, DNA language models, and AI.\\g<3>',
-            content
-        )
+        new_desc = f'{len(blogs)} {post_word} published on plant genomics, DNA language models, and AI.'
+    else:
+        new_desc = placeholder
+    content = re.sub(
+        r'(<p>)(A space for longer-form writing[^<]*|[0-9]+ post[s]? published[^<]*)(</p>)',
+        f'\\g<1>{new_desc}\\g<3>',
+        content
+    )
 
     with open(blog_html_path, 'w', encoding='utf-8') as f:
         f.write(content)
