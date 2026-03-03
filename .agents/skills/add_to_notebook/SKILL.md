@@ -79,10 +79,11 @@ Run the Python helper script:
 ```bash
 python3 .agents/skills/add_to_notebook/scripts/append_papers.py \
   --papers-json docs/js/papers.json \
-  --new-entries '/tmp/new_papers.json'
+  --new-entries 'new_papers_temp.json'
+rm new_papers_temp.json
 ```
 
-Where `/tmp/new_papers.json` is a temporary file you write containing the array of new paper objects.
+Where `new_papers_temp.json` is a temporary file you write in the current directory containing the array of new paper objects.
 
 The script will:
 - Load existing `papers.json`
