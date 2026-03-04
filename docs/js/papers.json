@@ -536,5 +536,148 @@
     "notes": "",
     "addedDate": "2026-03-03",
     "source": "Nature Plants"
+  },
+  {
+    "id": "kim2026scunify",
+    "title": "scUnify: A Unified Framework for Zero-shot Inference of Single-Cell Foundation Models",
+    "authors": [
+      "Donghyeon Kim",
+      "Kisung Jeong",
+      "Kwangsoo Kim"
+    ],
+    "journal": "bioRxiv",
+    "year": 2026,
+    "doi": "10.64898/2026.03.01.708392",
+    "tags": [
+      "foundation models",
+      "single-cell",
+      "scRNA-seq",
+      "zero-shot",
+      "multi-GPU",
+      "benchmarking"
+    ],
+    "rating": 3,
+    "abstract": "Foundation models (FMs) pre-trained on large-scale single-cell RNA sequencing (scRNA-seq) data provide powerful cell embeddings, but their practical usability and systematic comparison are limited by model-specific environments, preprocessing pipelines, and execution procedures. To address these challenges, we introduce scUnify, a unified zero-shot inference framework for single-cell foundation models. scUnify accepts a standard AnnData object and automatically manages environment isolation, preprocessing, and tokenization through a registry-based modular design. It employs a hierarchical distributed inference strategy that combines Ray-based task scheduling with multi-GPU data-parallel execution via HuggingFace Accelerate, enabling scalable inference on datasets containing up to one million cells. In addition, built-in integration of scIB and scGraph metrics enables standardized cross-model embedding evaluation within a single workflow. Benchmarking results demonstrate substantial reductions in inference time compared with the original model implementations, while preserving embedding quality and achieving near-linear multi-GPU scaling.",
+    "notes": "## Key Findings\n\n- scUnify provides a registry-based framework that unifies zero-shot inference for all major scRNA-seq foundation models (scGPT, Geneformer, etc.) from a single AnnData input\n- Achieves near-linear multi-GPU scaling via Ray + HuggingFace Accelerate, handling up to 1M cells\n- Built-in scIB and scGraph benchmarking allows standardized cross-model evaluation within one workflow\n\n## Methods Worth Noting\n\n- Registry-based modular design automatically handles environment isolation, preprocessing, and tokenization per model\n- Hierarchical distributed inference: Ray for task scheduling + HuggingFace Accelerate for data-parallel GPU execution\n- Benchmark comparisons against original model implementations show significant runtime reductions with equivalent embedding quality",
+    "addedDate": "2026-03-03",
+    "source": "bioRxiv"
+  },
+  {
+    "id": "dai2026spatial",
+    "title": "Towards Cross-Sample Alignment for Multi-Modal Representation Learning in Spatial Transcriptomics",
+    "authors": [
+      "Junfan Dai",
+      "Kosta Nonchev",
+      "Viktor H. Koelzer",
+      "Gunnar Raetsch"
+    ],
+    "journal": "bioRxiv",
+    "year": 2026,
+    "doi": "10.64898/2026.03.02.709002",
+    "tags": [
+      "spatial transcriptomics",
+      "foundation models",
+      "representation learning",
+      "batch correction",
+      "multi-modal"
+    ],
+    "rating": 3,
+    "abstract": "The growing number of spatial transcriptomics (ST) datasets enables comprehensive multi-modal characterization of cell types across diverse biological and clinical contexts. However, integration across patient cohorts remains challenging, as local microenvironment, patient-specific variability, and technical batch effects can dominate signals. Here, we hypothesize that combining specialized transcriptomics correction methods with deep representation learning can jointly align morphology, transcriptomics, and spatial information across multiple tissue samples. This approach benefits from recent transcriptomics and pathology foundation models, projecting cells into a shared embedding space where they cluster by cell type rather than dataset-specific conditions. Applying this framework to 18 skin melanoma, 12 human brain, and 4 lung cancer datasets, we demonstrate that it outperforms conventional batch-correction approaches by 58%, 38%, and 2-fold, respectively.",
+    "notes": "## Key Findings\n\n- Combines transcriptomics batch-correction with foundation model embeddings to align morphology, transcriptomics, and spatial data across 18+ tissue datasets\n- Outperforms conventional batch correction by 38–100% across skin melanoma, brain, and lung cancer cohorts\n- Cells cluster by cell type rather than dataset-specific batch effects in the shared embedding space\n\n## Methods Worth Noting\n\n- Uses pathology and transcriptomics foundation models jointly to project cells into a shared embedding space\n- Applies specialized transcriptomics correction (e.g., scVI-based) before deep representation learning\n- Framework (AESTETIK) is open-source: https://github.com/ratschlab/aestetik",
+    "addedDate": "2026-03-03",
+    "source": "bioRxiv"
+  },
+  {
+    "id": "jabin2026imagefm",
+    "title": "A comprehensive benchmark of publicly available image foundation models for their usability to predict gene expression from whole slide images",
+    "authors": [
+      "Aiman Jabin",
+      "Sayed Ahmad"
+    ],
+    "journal": "bioRxiv",
+    "year": 2026,
+    "doi": "10.64898/2026.03.02.709012",
+    "tags": [
+      "foundation models",
+      "histopathology",
+      "gene expression",
+      "benchmarking",
+      "vision transformers",
+      "RNA-seq"
+    ],
+    "rating": 3,
+    "abstract": "Recent advances in large-scale self-supervised learning have led to the emergence of foundation models capable of extracting transferable visual representations from high-dimensional image data. In computational pathology, such models are increasingly used as feature encoders for molecular prediction tasks. However, systematic benchmarking of publicly available image foundation models for transcriptomic prediction from whole-slide images (WSIs) remains limited. Here, we perform a comprehensive evaluation of five state-of-the-art vision foundation models — DINOv2, Phikon, UNI, H-Optimus-0, and MedSigLIP — for gene expression prediction using the TCGA-BRCA cohort. Tile embeddings from each model were aggregated via attention-based multiple instance learning (MIL), followed by multi-target regression to predict RNA-seq expression profiles. Histopathology-specific foundation models consistently outperformed general-purpose encoders, with Phikon achieving the strongest overall performance.",
+    "notes": "## Key Findings\n\n- Domain-specific histopathology foundation models (Phikon, UNI, H-Optimus-0) consistently outperform general-purpose encoders (DINOv2, MedSigLIP) for gene expression prediction from WSIs\n- Phikon achieves the strongest overall gene-level Spearman correlation across samples in the TCGA-BRCA cohort\n- Demonstrates that domain-aligned pretraining substantially enhances morphology-to-transcriptome inference\n\n## Methods Worth Noting\n\n- Attention-based multiple instance learning (MIL) aggregates tile embeddings from each foundation model\n- Multi-target regression predicts RNA-seq expression profiles from the aggregated patch embeddings\n- Performance assessed by gene-level Spearman correlation across samples",
+    "addedDate": "2026-03-03",
+    "source": "bioRxiv"
+  },
+  {
+    "id": "delafuente2026scaling",
+    "title": "Scaling laws of genome composition and the transition to complex multicellularity",
+    "authors": [
+      "Rafael de la Fuente",
+      "Walter Diaz-Villanueva",
+      "Vicente Arnau",
+      "Andres Moya"
+    ],
+    "journal": "bioRxiv",
+    "year": 2026,
+    "doi": "10.64898/2026.03.02.708964",
+    "tags": [
+      "genome evolution",
+      "noncoding DNA",
+      "multicellularity",
+      "scaling laws",
+      "comparative genomics",
+      "plant genomics"
+    ],
+    "rating": 3,
+    "abstract": "Genome architecture reorganizes over evolutionary time to support complex multicellularity without a proportional expansion of coding DNA. We conducted a cross-kingdom comparative analysis using high-quality RefSeq assemblies annotated by the NCBI Genome Annotation Pipeline, restricting the dataset to chromosome-level or complete genomes. Scaling relationships among genome size, gene content, and coding DNA content reveal compositional transitions that distinguish prokaryotic, unicellular eukaryotic, and multicellular lineages. Beyond approximately 40 Mb of genic content, coding expansion slows and saturates, indicating compositional constraints that shaped the rise of multicellularity. These results establish scaling laws that quantify how noncoding sequence expansion dominates genome growth in complex eukaryotes.",
+    "notes": "## Key Findings\n\n- Beyond ~40 Mb of genic content, coding DNA expansion saturates — noncoding sequence dominates genome growth in complex eukaryotes including plants\n- Cross-kingdom analysis identifies compositional transitions distinguishing prokaryotes, unicellular eukaryotes, and multicellular lineages\n- Establishes quantitative scaling laws for genome composition relevant to understanding regulatory complexity in large plant genomes\n\n## Methods Worth Noting\n\n- Used high-quality chromosome-level RefSeq assemblies annotated by NCBI Genome Annotation Pipeline for cross-kingdom comparison\n- Analyzed scaling relationships among genome size, gene content, and coding DNA content\n- Cross-kingdom approach enables detection of universal vs. lineage-specific genome composition rules",
+    "addedDate": "2026-03-03",
+    "source": "bioRxiv"
+  },
+  {
+    "id": "glushkevich2026arabidopsis",
+    "title": "A Global Genomic Resource for Outcrossing Arabidopsis lyrata and Arabidopsis arenosa",
+    "authors": [
+      "Anna Glushkevich",
+      "Lena Steinmann",
+      "Nikolai Tikhomirov",
+      "Jan Vlcek",
+      "Yue Cheng",
+      "Jana Flury",
+      "Uliana Kolesnikova",
+      "Martin Duchoslav",
+      "Jörn Gerchen",
+      "Gabriela Sramkova",
+      "Rimma Ufimov",
+      "Sofia Celestini",
+      "Sidharth Pophaly",
+      "Magdalena Bohutinska",
+      "Vanda Lipanova",
+      "Levi Yant",
+      "Tiina Mattila",
+      "Roswitha Schmickl",
+      "Adam D. Scott",
+      "Filip Kolar",
+      "Polina Novikova"
+    ],
+    "journal": "bioRxiv",
+    "year": 2026,
+    "doi": "10.64898/2026.03.02.709016",
+    "tags": [
+      "Arabidopsis",
+      "plant genomics",
+      "population genomics",
+      "GWAS",
+      "local adaptation",
+      "polyploidy"
+    ],
+    "rating": 4,
+    "abstract": "Genetic studies leveraging natural variation in Arabidopsis species have improved our understanding of evolutionary genetic processes underlying ecologically important and adaptive traits. Integrating the thorough functional knowledge accumulated in A. thaliana with the extensive natural variation in outcrossing Arabidopsis species is a powerful approach to study the basis of adaptation in natural evolutionary and ecological contexts. Here we present an integrated genomics database of sequenced genomes from several studies in A. lyrata (1018 genomes in total) and A. arenosa (736 genomes in total), spanning the geographic ranges of these two ploidy-variable, outcrossing taxa. We provide a searchable genome browser with population data mapped to respective reference genomes, an interactive geographic map of population structure clusters, and an efficient way to subsample the full dataset of genetic variation, available at arabidopsislyrata.org. To demonstrate its utility, we perform a genome-wide association study on a latitudinal cline of A. lyrata and find strong associations of several loci with latitude, including variants in key regulators of photoperiodic growth.",
+    "notes": "## Key Findings\n\n- Presents a comprehensive database of 1,018 A. lyrata + 736 A. arenosa genomes spanning their full geographic ranges\n- GWAS on latitudinal cline identifies strong associations with photoperiod-regulatory loci — a classic local adaptation signature\n- Ploidy-variable, outcrossing system enables study of regulatory evolution and polyploidy effects absent in A. thaliana\n\n## Methods Worth Noting\n\n- Searchable genome browser with population data mapped to reference genomes, available at arabidopsislyrata.org\n- Interactive geographic map of population structure clusters enables spatial analysis of genetic variation\n- Efficient subsampling tool allows targeted extraction of genetic variation from the full dataset",
+    "addedDate": "2026-03-03",
+    "source": "bioRxiv"
   }
 ]
