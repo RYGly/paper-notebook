@@ -58,19 +58,10 @@ For each selected paper, use `firecrawl_scrape` to fetch its abstract page and f
 - [bullet 2]
 - [bullet 3]
 
-## Relevance to Our Work
-
-[1-2 sentences on why this matters for plant genomics / DNA LMs / AI]
-
 ## Methods Worth Noting
 
 - [method 1]
 - [method 2]
-
-## Questions / Follow-ups
-
-- [ ] [question 1]
-- [ ] [question 2]
 ```
 
 ### Step 3 — Append to papers.json

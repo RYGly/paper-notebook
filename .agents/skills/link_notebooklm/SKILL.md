@@ -89,14 +89,8 @@ Fill all fields per the standard schema:
 - [bullet 1]
 - [bullet 2]
 
-## Relevance to Our Work
-[1-2 sentences]
-
 ## Methods Worth Noting
 - [method 1]
-
-## Questions / Follow-ups
-- [ ] [question 1]
 ```
 
 #### 3d. Write and append the new paper
@@ -115,10 +109,8 @@ Call `notebook_query` with:
 ```
 "Please give me a comprehensive personal study summary including:
 1. Key findings and main contributions
-2. Important methodological details  
+2. Important methodological details
 3. My personal insights and analysis notes from this notebook
-4. Open questions or follow-ups
-5. Relevance to plant genomics / DNA language models / AI
 
 Format as markdown with clear section headers."
 ```
