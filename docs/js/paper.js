@@ -122,8 +122,11 @@ function renderPaper(paper, base) {
     // Title
     setHTML('paper-title', paper.title);
 
-    // Authors
-    setHTML('paper-authors', (paper.authors || []).join(', '));
+    // Authors (handle both array and legacy string)
+    const authorsText = Array.isArray(paper.authors)
+        ? paper.authors.join(', ')
+        : (paper.authors || '');
+    setHTML('paper-authors', authorsText);
 
     // Stars
     setHTML('paper-stars', renderStars(paper.rating || 0));
