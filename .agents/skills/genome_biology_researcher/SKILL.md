@@ -28,6 +28,8 @@ When the user invokes this skill, follow these exact steps:
    - **RECENCY CONSTRAINT:** You MUST ONLY select papers from the most recent publication issue. Do not retrieve or select older papers from past years or previous issues. If using `firecrawl_search`, specifically query for the "latest issue" or current month/year to avoid retrieving older highly-cited papers.
 3. **Fetch Abstracts:** 
    For each relevant paper, use the `firecrawl_scrape` tool to fetch its dedicated abstract page on the Genome Biology website to get the full abstract text and DOI.
+3b. **Deduplicate Against Existing Papers:**
+   Before presenting results, check the existing database at `docs/js/papers.json` in the repository. Read the file and extract all existing paper DOIs and titles. Cross-reference your candidate papers against this list — if a paper's DOI or title (case-insensitive) already exists in `papers.json`, **skip it and do not include it in the final results**. Only present papers that are genuinely new and not already tracked.
 4. **Format Output:** 
    Present the final output using clear markdown headings and bullet points. For each paper, you MUST include:
    - The Journal Name, Title, and Authors

@@ -31,6 +31,8 @@ When the user invokes this skill, follow these exact steps:
    - **RECENCY CONSTRAINT:** You MUST ONLY select papers from the most recent daily updates (i.e., submitted or updated within the last few days). Do not retrieve older papers.
 3. **Fetch Abstracts:** 
    For each relevant paper, use the `firecrawl_scrape` tool to fetch its dedicated abstract page on bioRxiv to get the full abstract text and preprint link.
+3b. **Deduplicate Against Existing Papers:**
+   Before presenting results, check the existing database at `docs/js/papers.json` in the repository. Read the file and extract all existing paper DOIs and titles. Cross-reference your candidate papers against this list — if a paper's DOI or title (case-insensitive) already exists in `papers.json`, **skip it and do not include it in the final results**. Only present papers that are genuinely new and not already tracked.
 4. **Format Output:** 
    Present the final output using clear markdown headings and bullet points. For each paper, you MUST include:
    - The Title and Authors
