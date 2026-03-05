@@ -499,6 +499,36 @@ body::after {
   opacity: 0.88;
 }
 
+/* Read Only chip — amber accent to distinguish from green unread chip */
+.read-only-chip {
+  border-style: dashed;
+  border-color: var(--border-hover);
+  color: var(--text-secondary);
+  gap: 6px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.read-only-chip:hover {
+  color: var(--text-primary);
+  border-color: #ffa726;
+  background: var(--bg-glass);
+}
+
+.read-only-chip.active {
+  background: #ffa726;
+  border-color: #ffa726;
+  border-style: solid;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 0 12px rgba(255, 167, 38, 0.4);
+}
+
+.read-only-chip.active:hover {
+  background: #ffa726;
+  opacity: 0.88;
+}
+
 /* ── Read Checkbox (on each card) ────────────────────────────── */
 .read-checkbox {
   margin-left: auto;

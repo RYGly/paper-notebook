@@ -42,6 +42,7 @@ let activeTag = null;
 let searchQuery = '';
 let deepNotesOnly = false;
 let unreadOnly = false;
+let readOnly = false;
 let activeSort = 'newest'; // 'newest' | 'oldest' | 'rating'
 let displayLimit = 50;   // 25 | 50 | 100 | 0 (= all)
 
@@ -76,6 +77,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     setupSearch();
     setupDeepNotesToggle();
     setupUnreadToggle();
+    setupReadToggle();
     setupSortSelect();
     setupDisplayLimit();
 });
@@ -176,11 +178,29 @@ function setupDeepNotesToggle() {
 // ── Unread Only Toggle ────────────────────────────────────────
 function setupUnreadToggle() {
     const btn = document.getElementById('unread-toggle');
+    const readBtn = document.getElementById('read-only-toggle');
     if (!btn) return;
     btn.addEventListener('click', () => {
         unreadOnly = !unreadOnly;
+        // mutually exclusive with Read Only
+        if (unreadOnly) { readOnly = false; readBtn?.classList.remove('active'); readBtn?.setAttribute('aria-pressed', false); }
         btn.setAttribute('aria-pressed', unreadOnly);
         btn.classList.toggle('active', unreadOnly);
+        renderCards();
+    });
+}
+
+// ── Read Only Toggle ──────────────────────────────────────────
+function setupReadToggle() {
+    const btn = document.getElementById('read-only-toggle');
+    const unreadBtn = document.getElementById('unread-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+        readOnly = !readOnly;
+        // mutually exclusive with Unread Only
+        if (readOnly) { unreadOnly = false; unreadBtn?.classList.remove('active'); unreadBtn?.setAttribute('aria-pressed', false); }
+        btn.setAttribute('aria-pressed', readOnly);
+        btn.classList.toggle('active', readOnly);
         renderCards();
     });
 }
@@ -239,6 +259,7 @@ function filterPapers() {
         const tagMatch = !activeTag || (p.tags && p.tags.includes(activeTag));
         const deepMatch = !deepNotesOnly || !!p.notebooklm_url;
         const unreadMatch = !unreadOnly || !readPapers.has(p.id);
+        const readMatch = !readOnly || readPapers.has(p.id);
         const q = searchQuery;
 
         // Handle authors as string or array
@@ -249,7 +270,7 @@ function filterPapers() {
             authorsString.toLowerCase().includes(q) ||
             (p.tags && p.tags.join(' ').toLowerCase().includes(q)) ||
             (p.abstract && p.abstract.toLowerCase().includes(q));
-        return journalMatch && tagMatch && deepMatch && unreadMatch && searchMatch;
+        return journalMatch && tagMatch && deepMatch && unreadMatch && readMatch && searchMatch;
     });
 }
 
