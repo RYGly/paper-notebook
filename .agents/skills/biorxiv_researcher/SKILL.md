@@ -6,52 +6,86 @@ description: A research assistant that uses Firecrawl to monitor the latest prep
 # bioRxiv Researcher
 
 ## Purpose
-This skill configures the agent to automatically scrape the recent submissions on bioRxiv and filter them based on your specific research expertise in DNA language models, plant genetics/evolution, and machine learning.
+Monitor the latest preprints posted on bioRxiv and surface the most relevant ones based on the user's research interests.
 
 ## Prerequisites
-- The **Firecrawl MCP Server** must be running locally (`docker compose up -d`) and configured in the `mcp_config.json`.
+- Firecrawl MCP Server must be running
 
-## Target Sections
-- Bioinformatics
-- Genetics
-- Evolutionary Biology
-- Genomics
+## Important: Use RSS Feeds, NOT Collection Pages
+
+**Do NOT** scrape `https://www.biorxiv.org/collection/*` — bioRxiv blocks this with anti-bot protection.
+
+**Instead**, use the official bioRxiv RSS feeds, which are publicly accessible and return full paper metadata:
+
+| Section | RSS URL |
+|---|---|
+| Bioinformatics | `https://connect.biorxiv.org/biorxiv_xml.php?subject=bioinformatics` |
+| Genetics | `https://connect.biorxiv.org/biorxiv_xml.php?subject=genetics` |
+| Evolutionary Biology | `https://connect.biorxiv.org/biorxiv_xml.php?subject=evolutionary-biology` |
+| Genomics | `https://connect.biorxiv.org/biorxiv_xml.php?subject=genomics` |
+| Plant Biology | `https://connect.biorxiv.org/biorxiv_xml.php?subject=plant-biology` |
 
 ## Instructions for the Agent
 
-When the user invokes this skill, follow these exact steps:
+### Step 1 — Scrape RSS Feeds
+Use `firecrawl_scrape` with `formats: ["markdown"]` on the RSS URLs above (scrape all sections in parallel):
 
-1. **Scrape bioRxiv:** 
-   Use the `firecrawl_scrape` tool to fetch the latest research preprints from the target sections on bioRxiv (e.g., `https://www.biorxiv.org/collection/bioinformatics`, `https://www.biorxiv.org/collection/genetics`, etc.).
-2. **Filter & Select:** 
-   Read the scraped content and identify all relevant papers based on the user's core research background. The core research interests to prioritize are:
-   - **DNA/Biological Language Models (Foundation Models):** applications to genomics, cross-species analysis, evolution, and population genetics/genomics.
-   - **Plant Genomics and Evolution:** crop genomics, regulatory elements, whole-genome duplication.
-   - **AI/Deep Learning Methods in Biology:** novel architectures applied to bioinformatics, RNA-seq, and sequence modeling.
-   - **RECENCY CONSTRAINT:** You MUST ONLY select papers from the most recent daily updates (i.e., submitted or updated within the last few days). Do not retrieve older papers.
-3. **Fetch Abstracts:** 
-   For each relevant paper, use the `firecrawl_scrape` tool to fetch its dedicated abstract page on bioRxiv to get the full abstract text and preprint link.
-3b. **Deduplicate Against Existing Papers:**
-   Before presenting results, check the existing database at `docs/js/papers.json` in the repository. Read the file and extract all existing paper DOIs and titles. Cross-reference your candidate papers against this list — if a paper's DOI or title (case-insensitive) already exists in `papers.json`, **skip it and do not include it in the final results**. Only present papers that are genuinely new and not already tracked.
-4. **Format Output:** 
-   Present the final output using clear markdown headings and bullet points. For each paper, you MUST include:
-   - The Title and Authors
-   - A concise 2-3 sentence summary of the abstract, highlighting the core biological/AI contribution
-   - Why it is relevant to the user's specific research (e.g., "Relevant because it explores cross-species DNA foundation models").
-   - Direct markdown links to the abstract page and PDF download.
-
-## Example Output Format
-```markdown
-### 1. [Paper Title](https://www.biorxiv.org/content/xxxx)
-*   **Authors:** Author 1, Author 2, etc.
-*   **Abstract Summary:** [2-3 sentences summarising the abstract and main findings]
-*   **Relevance:** [1 sentence explaining why it aligns with plant genomics, evolution, or biological AI]
-*   **Links:** [Abstract Page](https://www.biorxiv.org/content/xxxx) | [PDF Direct Download](https://www.biorxiv.org/content/xxxx.full.pdf)
+```
+firecrawl_scrape(url="https://connect.biorxiv.org/biorxiv_xml.php?subject=bioinformatics", formats=["markdown"])
+firecrawl_scrape(url="https://connect.biorxiv.org/biorxiv_xml.php?subject=genetics", formats=["markdown"])
+firecrawl_scrape(url="https://connect.biorxiv.org/biorxiv_xml.php?subject=evolutionary-biology", formats=["markdown"])
+firecrawl_scrape(url="https://connect.biorxiv.org/biorxiv_xml.php?subject=genomics", formats=["markdown"])
+firecrawl_scrape(url="https://connect.biorxiv.org/biorxiv_xml.php?subject=plant-biology", formats=["markdown"])
 ```
 
-## Step 5 — Offer to Add to Notebook
-After presenting the results, always ask:
+Each RSS feed returns ~30 recent entries. Each entry includes: **title**, **abstract** (in `<description>`), **authors** (in `<dc:creator>`), **DOI** (in `<dc:identifier>`), and **date** (in `<dc:date>`).
 
-> "Would you like to add any of these to your paper notebook website? Reply with the numbers (e.g. **1, 3**), **all**, or **none**."
+### Step 2 — Filter for Relevance
+Parse the combined results and select papers relevant to the user's research interests:
 
-Then follow the **Add to Notebook** skill (`.agents/skills/add_to_notebook/SKILL.md`) to handle selection, schema building, and automatic commit + push to GitHub.
+**High priority topics** (rate 4-5):
+- DNA/RNA/biological language models and foundation models applied to genomics or sequences
+- Plant genomics: crops (maize, rice, wheat, soybean, etc.), *Arabidopsis*, pangenomes, regulatory elements
+- Whole-genome duplication, polyploidy, genome evolution in plants
+- AI/deep learning for genome annotation, gene regulation, variant effect prediction
+
+**Medium priority topics** (rate 3):
+- Sequence modeling more broadly (protein LMs, single-cell foundation models)
+- Population genetics and phylogenomics with computational methods
+- Cross-species comparative genomics
+- Novel genome assembly or annotation tools (T2T, Hi-C, long-read)
+- AI for functional genomics: epigenomics, chromatin accessibility, spatial transcriptomics
+
+**Exclude** (not relevant):
+- Medical/clinical studies without genomic/AI angle
+- Non-plant organisms unless clearly AI/LM related
+- Purely statistical or epidemiology methods unrelated to sequence analysis
+
+### Step 3 — Deduplicate
+Load `docs/js/papers.json` and check existing `doi` fields. Skip any paper whose DOI already appears in `papers.json`.
+
+### Step 4 — Present Results
+Show the top relevant papers (aim for 5-10) in this format:
+
+```
+Found X relevant new preprints on bioRxiv.
+
+1. **[Title]** | bioRxiv, [YYYY-MM-DD]
+   Authors: [First Author et al.]
+   DOI: [doi]
+   → [1-2 sentence summary of why this is relevant]
+
+2. ...
+```
+
+Then ask: "Would you like to add any of these to your notebook? Reply with numbers (e.g. 1, 3), **all**, or **none**."
+
+### Step 5 — Add Selected Papers
+If the user selects papers, invoke the **Add to Notebook** skill to build full `papers.json` entries and commit.
+
+Use `"journal": "bioRxiv"` for all entries. The DOI from the RSS feed (`dc:identifier`) is in the format `doi:10.XXXX/...` — strip the `doi:` prefix to get the clean DOI string. The abstract is in the `<description>` field of each RSS item.
+
+## Notes
+- RSS feeds typically contain the last 30 papers posted per section. For older papers, use `firecrawl_search` with targeted queries.
+- The `onlyMainContent: true` flag is fine to use with these RSS feeds.
+- Do not use `proxy: "stealth"` — it is not needed and wastes credits; the RSS feeds are fully public.
