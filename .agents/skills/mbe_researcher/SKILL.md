@@ -18,8 +18,20 @@ This skill configures the agent to automatically scrape the recent publications 
 
 When the user invokes this skill, follow these exact steps:
 
-1. **Scrape Journal Pages:** 
-   Use the `firecrawl_scrape` tool (or `firecrawl_search`) to fetch the latest research articles from the MBE journal website.
+1. **Scrape Journal Pages:**
+   Use the `firecrawl_scrape` tool to fetch articles from **both** of the following MBE pages:
+
+   a. **Current print issue TOC**:
+   ```
+   firecrawl_scrape(url="https://academic.oup.com/mbe/issue", formats=["markdown"])
+   ```
+
+   b. **Advance Access** (articles published online ahead of print — these never appear in the issue TOC until their print date):
+   ```
+   firecrawl_scrape(url="https://academic.oup.com/mbe/advance-articles", formats=["markdown"])
+   ```
+
+   Combine the article lists from both sources before filtering. If either URL is blocked or returns insufficient content, fall back to `firecrawl_search` with a query like `"site:academic.oup.com/mbe research article 2026"`.
 2. **Filter & Select:** 
    Read the scraped content and identify all relevant papers based on the user's core research background. The core research interests to prioritize are:
    - **DNA/Biological Language Models (Foundation Models):** applications to genomics, cross-species analysis, evolution, and population genetics/genomics.

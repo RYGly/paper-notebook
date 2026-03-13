@@ -18,8 +18,21 @@ This skill configures the agent to automatically scrape the recent publications 
 
 When the user invokes this skill, follow these exact steps:
 
-1. **Scrape Journal Pages:** 
-   Use the `firecrawl_scrape` tool (or `firecrawl_search`) to fetch the latest research articles across Biological Sciences from PNAS.
+1. **Scrape Journal Pages:**
+   Use the `firecrawl_scrape` tool to fetch articles from **both** of the following PNAS pages:
+
+   a. **Current print issue TOC** (weekly articles):
+   ```
+   firecrawl_scrape(url="https://www.pnas.org/toc/pnas/current", formats=["markdown"])
+   ```
+
+   b. **Latest Articles** (articles published online ahead of print — these never appear in the weekly TOC until their print date):
+   ```
+   firecrawl_scrape(url="https://www.pnas.org/action/showFeed?type=etoc&feed=rss&jc=pnas", formats=["markdown"])
+   ```
+   Or alternatively scrape: `https://www.pnas.org/latest-articles`
+
+   Combine the article lists from both sources before filtering. If either URL is blocked or returns insufficient content, fall back to `firecrawl_search` with a query like `"site:pnas.org research article 2026"`.
 2. **Filter & Select:** 
    Read the scraped content and identify all relevant papers based on the user's core research background. The core research interests to prioritize are:
    - **DNA/Biological Language Models (Foundation Models):** applications to genomics, cross-species analysis, evolution, and population genetics/genomics.

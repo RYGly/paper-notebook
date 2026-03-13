@@ -25,11 +25,19 @@ Genome Research is hosted on Cold Spring Harbor Laboratory Press (CSHL Press). I
 When the user invokes this skill, follow these exact steps:
 
 1. **Scrape Journal Pages:**
-   First try scraping the current issue TOC:
+   Use the `firecrawl_scrape` tool to fetch articles from **both** of the following Genome Research pages:
+
+   a. **Current print issue TOC**:
    ```
    firecrawl_scrape(url="https://genome.cshlp.org/content/current", formats=["markdown"])
    ```
-   If blocked, fall back to `firecrawl_search` targeting recent articles on `genome.cshlp.org`.
+
+   b. **Advance Online** (articles published online ahead of print — these never appear in the issue TOC until their print date):
+   ```
+   firecrawl_scrape(url="https://genome.cshlp.org/content/early/recent", formats=["markdown"])
+   ```
+
+   Combine the article lists from both sources before filtering. If either URL is blocked, fall back to `firecrawl_search` targeting recent articles: `"site:genome.cshlp.org 2026" plant genomics OR language model OR deep learning`.
 
 2. **Filter & Select:**
    Read the scraped content and identify all relevant papers based on the user's core research background. The core research interests to prioritize are:
