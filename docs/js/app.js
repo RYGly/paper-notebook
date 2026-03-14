@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 function getBasePath() {
     // If on GitHub Pages
-    if (window.location.hostname === 'zhaijj.github.io') {
+    if (window.location.hostname === 'RYGly.github.io') {
         return '/paper-notebook';
     }
 

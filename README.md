@@ -47,7 +47,7 @@ To run the skills, your AI assistant must be connected to the following MCP serv
 2. **[NotebookLM MCP](https://github.com/GoogleCloudPlatform/mcp-notebooklm)**: Used to fetch your personal notes and link them to papers.
 
 ### Step 2: Tailor the AI's Research Interests
-By default, the skills are configured to look for papers related to *"plant genomics, DNA language models, and AI"*. You should change this to match your field!
+By default, the skills are configured to look for papers related to *"cold tolerance, photosynthesis, inflorescence development, single-cell in plants, spatial transcriptome in plants, yield related traits in maize"*. You should change this to match your field!
 
 1. Open the folders inside `.agents/skills/`.
 2. Edit the `SKILL.md` file in each folder (e.g., `cell_researcher/SKILL.md`).

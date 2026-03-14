@@ -103,7 +103,7 @@ function renderPaper(paper, base) {
     const accent = JOURNAL_ACCENTS[slug] || JOURNAL_ACCENTS.default;
 
     // Page title
-    document.title = `${paper.title} | Jingjing's Paper Notebook`;
+    document.title = `${paper.title} | Yun Luo's Paper Notebook`;
 
     // Accent CSS var
     document.documentElement.style.setProperty('--accent', accent);
@@ -236,7 +236,7 @@ function initUtterances() {
     // Create script element
     const script = document.createElement('script');
     script.src = 'https://utteranc.es/client.js';
-    script.setAttribute('repo', 'zhaijj/paper-notebook');
+    script.setAttribute('repo', 'RYGly/paper-notebook');
     script.setAttribute('issue-term', 'title');
     script.setAttribute('label', 'comment');
     script.setAttribute('theme', utterancesTheme);

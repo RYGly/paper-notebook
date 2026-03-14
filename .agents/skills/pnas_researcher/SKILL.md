@@ -1,6 +1,6 @@
 ---
 name: PNAS Researcher
-description: A research assistant that uses Firecrawl to monitor the latest publications in PNAS (Proceedings of the National Academy of Sciences) and summarize the most relevant papers based on your background in plant genomics, DNA language models, and AI.
+description: A research assistant that uses Firecrawl to monitor the latest publications in PNAS (Proceedings of the National Academy of Sciences) and summarize the most relevant papers based on your background in cold tolerance, photosynthesis, inflorescence development, single-cell in plants, spatial transcriptome in plants, and yield related traits in maize.
 ---
 
 # PNAS Researcher

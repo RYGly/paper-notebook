@@ -1,6 +1,6 @@
 ---
 name: Cell Genomics Researcher
-description: A research assistant that uses Firecrawl to monitor the latest publications in Cell Genomics and summarize the most relevant papers based on your background in plant genomics, DNA language models, and AI.
+description: A research assistant that uses Firecrawl to monitor the latest publications in Cell Genomics and summarize the most relevant papers based on your background in cold tolerance, photosynthesis, inflorescence development, single-cell in plants, spatial transcriptome in plants, and yield related traits in maize.
 ---
 
 # Cell Genomics Researcher

@@ -1,6 +1,6 @@
 ---
 name: bioRxiv Researcher
-description: A research assistant that uses Firecrawl to monitor the latest preprints on bioRxiv (specifically Bioinformatics, Genetics, Evolutionary Biology sections) and summarize papers based on your background in plant genomics, sequence modeling, and evolution.
+description: A research assistant that uses Firecrawl to monitor the latest preprints on bioRxiv (specifically Bioinformatics, Genetics, Evolutionary Biology sections) and summarize papers based on your background in cold tolerance, photosynthesis, inflorescence development, single-cell in plants, spatial transcriptome in plants, and yield related traits in maize.
 ---
 
 # bioRxiv Researcher
