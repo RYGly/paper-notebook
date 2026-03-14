@@ -176,6 +176,9 @@ function renderPaper(paper, base) {
             nlmLink.style.display = 'none';
         }
     }
+
+    // Initialize Utterances after the DOM and title are updated for this specific paper
+    initUtterances();
 }
 
 // ── Simple Markdown Parser ────────────────────────────────────
@@ -258,10 +261,4 @@ document.getElementById('theme-toggle')?.addEventListener('click', () => {
             initUtterances();
         }
     }, 10);
-});
-
-// Initialize on first load
-document.addEventListener('DOMContentLoaded', () => {
-    // Other init stuff is in DOMContentLoaded at top, but we can just call it here
-    setTimeout(initUtterances, 500); // slight delay to ensure DOM is ready
 });
