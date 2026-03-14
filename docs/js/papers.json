@@ -70,5 +70,34 @@
     "notebooklm_url": "",
     "notebooklm_notes": "",
     "updatedDate": "2026-03-14"
+  },
+  {
+    "id": "wang2026grass",
+    "title": "Grass inflorescence morphodynamics guides yield improvement in wheat",
+    "authors": [
+      "Yuange Wang",
+      "Bofei Cui",
+      "Fei Du",
+      "Jian Li",
+      "Yuling Jiao"
+    ],
+    "journal": "Nature Plants",
+    "year": 2026,
+    "doi": "10.1038/s41477-026-02246-3",
+    "tags": [
+      "plant development",
+      "inflorescence",
+      "wheat",
+      "yield traits",
+      "morphodynamics"
+    ],
+    "rating": 5,
+    "abstract": "Grass inflorescence morphology displays remarkable diversity across species and is a key determinant of crop yield. Here, to elucidate how developmental morphodynamics shapes inflorescence architecture, we conducted a comparative analysis of early inflorescence development in bread wheat and rice. Computational modelling revealed that meristem fate transition and primordium initiation modes collectively contribute to the observed architecture diversity. Furthermore, the model elucidates the formation of distinct supernumerary spikelet types in wheat and predicts two independent developmental pathways for generating paired spikelets—a specialized form of inflorescence branching. We also identified a mutant allele, duo2, that results in accelerated developmental progression and demonstrated significant yield improvement in duo2 plants under field conditions. The causal gene RA2-D, an orthologue of maize RAMOSA2 (RA2), was found to regulate floral transition. This study elucidates how perturbations in developmental dynamics drive the diversification of grass inflorescence morphologies.",
+    "notes": "## Key Findings\n\n- Computational modeling reveals how meristem fate transition and primordium initiation control inflorescence architecture in bread wheat and rice.\n- Predicts independent developmental pathways for supernumerary (paired) spikelets in wheat.\n- Identification of the early-heading paired-spikelet mutant duo2, which exhibits robust yield gains in the field.\n- The causal gene is RA2-D, an orthologue of maize RAMOSA2 regulating floral transition.\n\n## Methods Worth Noting\n\n- Comparative morphodynamic analysis of early inflorescence development.\n- Computational modeling of meristem fate and primordium initiation.",
+    "addedDate": "2026-03-14",
+    "source": "Nature Plants",
+    "notebooklm_url": "",
+    "notebooklm_notes": "",
+    "updatedDate": "2026-03-14"
   }
 ]
