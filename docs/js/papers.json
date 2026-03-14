@@ -142,5 +142,35 @@
     "notebooklm_url": "",
     "notebooklm_notes": "",
     "updatedDate": "2026-03-14"
+  },
+  {
+    "id": "morris2026sorghum",
+    "title": "A sorghum pangenome reference improves global crop trait discovery",
+    "authors": [
+      "Morris, Geoffrey P.",
+      "Harder, Avril M.",
+      "Healey, Adam L.",
+      "McLaughlin, Chloee M.",
+      "Rifkin, Joanna L.",
+      "Cruet-Burgos, Clara",
+      "Jenkins, Jerry W.",
+      "Shu, Shengqiang",
+      "Spiekerman, John J.",
+      "VanGessel, Carl J."
+    ],
+    "journal": "Nature",
+    "year": 2026,
+    "doi": "10.1038/s41586-026-10229-9",
+    "tags": [
+      "sorghum",
+      "pangenome",
+      "crop improvement",
+      "structural variation"
+    ],
+    "rating": 5,
+    "abstract": "Although the green revolution adapted a handful of crops to homogeneous and high-input industrialized agriculture, much of the global population still relies on the local production of variable crop cultivars by low-input smallholder farms. This diversity of unhomogenized crops, like that of the grain and bioenergy crop sorghum, offers raw materials for genetic gain and cultivar improvement. However, breeding efforts can be constrained by highly specialized traits and breeding targets. Here, to bridge this diversity, we constructed a 33-member pangenome reference and a diversity panel across 1,984 cultivars and landraces. We leveraged these resources to explore the complex interplay among historical contingency, ongoing adaptation and previously uncharacterized structural diversity. Specifically, our analyses conclusively demonstrated multiple nested and deeply diverged structural variants in the domestication gene SHATTERING1, which distinguish the previously established multicentric origin of sorghum. We then applied landscape genomics to reveal how gene flow and secondary contact created the complex genetic mosaic in contemporary breeding networks. As proof of concept for pangenome-accelerated trait discovery, we connected biosynthetic gene cluster structural variation to phenotypic leaf concentration of the cyanogenic glucoside dhurrin. Combined, these approaches will accelerate breeding and trait discovery and provide a framework for similar applications in other crops. A pangenome reference for the phenotypically diverse crop sorghum aims to help accelerate future efforts to breed crops that are better adapted to changing environments.",
+    "notes": "## Key Findings\n\n- Constructed a 33-member pangenome reference for sorghum.\n- Assembled a diversity panel across 1,984 cultivars and landraces.\n- Demonstrated deeply diverged structural variants in the domestication gene SHATTERING1.\n- Connected biosynthetic gene cluster structural variation to phenotypic leaf concentration of dhurrin.\n\n## Methods Worth Noting\n\n- Landscape genomics to analyze gene flow and secondary contact.\n- Pangenome-accelerated trait discovery.",
+    "addedDate": "2026-03-14",
+    "source": "Nature"
   }
 ]
