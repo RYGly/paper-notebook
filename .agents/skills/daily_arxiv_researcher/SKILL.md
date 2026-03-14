@@ -12,6 +12,10 @@ This skill configures the agent to automatically scrape the recent submissions o
 - The **Firecrawl MCP Server** must be running locally (`docker compose up -d`) and configured in the `mcp_config.json`.
 
 ## Instructions for the Agent
+## Important Agent Instructions
+- **NEVER use the browser_subagent** or open the browser to fetch papers.
+- ALWAYS use the  or  tool from the Firecrawl MCP server. Wait for the server to be available if it's not immediately found.
+
 
 When the user invokes this skill, follow these exact steps:
 

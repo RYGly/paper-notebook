@@ -15,6 +15,10 @@ This skill configures the agent to automatically scrape the recent publications 
 - Nature Plants (https://www.nature.com/nplants/articles?type=article)
 
 ## Instructions for the Agent
+## Important Agent Instructions
+- **NEVER use the browser_subagent** or open the browser to fetch papers.
+- ALWAYS use the  or  tool from the Firecrawl MCP server. Wait for the server to be available if it's not immediately found.
+
 
 When the user invokes this skill, follow these exact steps:
 

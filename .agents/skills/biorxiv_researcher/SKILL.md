@@ -26,6 +26,10 @@ Monitor the latest preprints posted on bioRxiv and surface the most relevant one
 | Plant Biology | `https://connect.biorxiv.org/biorxiv_xml.php?subject=plant-biology` |
 
 ## Instructions for the Agent
+## Important Agent Instructions
+- **NEVER use the browser_subagent** or open the browser to fetch papers.
+- ALWAYS use the  or  tool from the Firecrawl MCP server. Wait for the server to be available if it's not immediately found.
+
 
 ### Step 1 — Scrape RSS Feeds
 Use `firecrawl_scrape` with `formats: ["markdown"]` on the RSS URLs above (scrape all sections in parallel):

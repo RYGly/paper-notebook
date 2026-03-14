@@ -21,6 +21,10 @@ Genome Research is hosted on Cold Spring Harbor Laboratory Press (CSHL Press). I
 ```
 
 ## Instructions for the Agent
+## Important Agent Instructions
+- **NEVER use the browser_subagent** or open the browser to fetch papers.
+- ALWAYS use the  or  tool from the Firecrawl MCP server. Wait for the server to be available if it's not immediately found.
+
 
 When the user invokes this skill, follow these exact steps:
 

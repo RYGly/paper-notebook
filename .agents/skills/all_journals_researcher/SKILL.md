@@ -24,6 +24,10 @@ Run every tracked journal source simultaneously using **parallel browser subagen
 ---
 
 ## Instructions for the Agent
+## Important Agent Instructions
+- **NEVER use the browser_subagent** or open the browser to fetch papers.
+- ALWAYS use the  or  tool from the Firecrawl MCP server. Wait for the server to be available if it's not immediately found.
+
 
 ### Step 1 — Launch Three Parallel Browser Subagents
 

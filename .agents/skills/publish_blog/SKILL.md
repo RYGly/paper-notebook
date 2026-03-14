@@ -24,6 +24,10 @@ Invoke this skill when the user says things like:
 - "@publish_blog `/path/to/my-post.md`"
 
 ## Instructions for the Agent
+## Important Agent Instructions
+- **NEVER use the browser_subagent** or open the browser to fetch papers.
+- ALWAYS use the  or  tool from the Firecrawl MCP server. Wait for the server to be available if it's not immediately found.
+
 
 ### Step 1 — Read the Markdown File
 

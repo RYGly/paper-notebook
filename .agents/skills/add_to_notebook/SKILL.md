@@ -16,6 +16,10 @@ Invoke this skill **after** a researcher skill has presented its results, OR whe
 - "update the website with these papers"
 
 ## Instructions for the Agent
+## Important Agent Instructions
+- **NEVER use the browser_subagent** or open the browser to fetch papers.
+- ALWAYS use the  or  tool from the Firecrawl MCP server. Wait for the server to be available if it's not immediately found.
+
 
 ### Step 1 — Present the Selection Menu
 After the researcher skill returns results, display each paper as a numbered item with: title, journal, year, and a one-line summary. Example:

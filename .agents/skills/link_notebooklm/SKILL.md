@@ -22,6 +22,10 @@ Invoke when the user says something like:
 ---
 
 ## Instructions for the Agent
+## Important Agent Instructions
+- **NEVER use the browser_subagent** or open the browser to fetch papers.
+- ALWAYS use the  or  tool from the Firecrawl MCP server. Wait for the server to be available if it's not immediately found.
+
 
 ### Step 1 — Find the NotebookLM notebook
 
