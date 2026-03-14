@@ -99,5 +99,48 @@
     "notebooklm_url": "",
     "notebooklm_notes": "",
     "updatedDate": "2026-03-14"
+  },
+  {
+    "id": "zhang2026maize",
+    "title": "A genetic module boosts grain yield and nitrogen use efficiency by improving nitrate transport in maize",
+    "authors": [
+      "Meiling Zhang",
+      "Ziqi Wu",
+      "Liangliang Huang",
+      "Xiaomeng Shen",
+      "Kangqi Wang",
+      "Yingying Hu",
+      "Burebiyanmu Wubulikasimu",
+      "Yizhou Qin",
+      "Junzheng Fu",
+      "Xiqing Wang",
+      "Feng Qin",
+      "Yi Wang",
+      "Ziwei Luo",
+      "Bo Yang",
+      "Chao Bian",
+      "Haiming Zhao",
+      "Jian Chen",
+      "Weibin Song",
+      "Jinsheng Lai"
+    ],
+    "journal": "Nature Genetics",
+    "year": 2026,
+    "doi": "10.1038/s41588-026-02532-y",
+    "tags": [
+      "maize",
+      "grain yield",
+      "nitrogen use efficiency",
+      "nitrate transport",
+      "GWAS"
+    ],
+    "rating": 5,
+    "abstract": "Although nitrogen fertilizer use has boosted crop yields, excessive application diminishes crop nitrogen use efficiency (NUE) and causes environmental problems. Therefore, increasing crop NUE is urgently needed for agricultural sustainability. Through a genome-wide association study, we identified a locus, NCR1 (Nitrate Concentration Regulator 1), that correlates with nitrate concentrations in maize root xylem. NCR1 encodes a MYB transcription factor that positively regulates the transcription of nitrate transporter NRT2.3 expressed predominantly in root xylem parenchyma cells. The NCR1–NRT2.3 transcription module responds to external nitrogen and controls nitrate translocation from roots to shoots. The superior NCR1−In allele with a 123-bp promoter deletion has decreased in frequency as nitrogen fertilizer use in China has increased. Overexpression of NCR1 or NRT2.3, or introgression of NCR1−In, increases grain yield and nitrogen content in the shoot and seed. This study uncovers a crucial genetic module for improving grain yield and NUE in maize.",
+    "notes": "## Key Findings\n\n- Identified NCR1 locus via GWAS that controls nitrate concentrations in maize root xylem.\n- NCR1 encodes a MYB transcription factor activating the nitrate transporter NRT2.3.\n- The NCR1-NRT2.3 module promotes nitrate translocation from roots to shoots.\n- Overexpression of NCR1/NRT2.3 or introgression of the superior NCR1-In allele significantly improves grain yield and nitrogen use efficiency.\n\n## Methods Worth Noting\n\n- Genome-wide association study (GWAS) for nitrate concentration in root xylem.\n- Overexpression and introgression line phenotyping in field conditions.",
+    "addedDate": "2026-03-14",
+    "source": "Nature Genetics",
+    "notebooklm_url": "",
+    "notebooklm_notes": "",
+    "updatedDate": "2026-03-14"
   }
 ]
