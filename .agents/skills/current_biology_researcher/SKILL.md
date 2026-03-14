@@ -6,7 +6,7 @@ description: A research assistant that uses Firecrawl to monitor the latest publ
 # Current Biology Researcher
 
 ## Purpose
-This skill configures the agent to automatically scrape the recent publications from Current Biology (cell.com/current-biology) and filter them based on your specific research expertise in plant genetics, DNA language models, and machine learning.
+This skill configures the agent to automatically scrape the recent publications from Current Biology (cell.com/current-biology) and filter them based on your specific research expertise in cold tolerance, photosynthesis, inflorescence development, single-cell in plants, spatial transcriptome in plants, and yield related traits in maize.
 
 ## Prerequisites
 - The **Firecrawl MCP Server** must be running locally (`docker compose up -d`) and configured in the `mcp_config.json`.
@@ -15,26 +15,18 @@ This skill configures the agent to automatically scrape the recent publications 
 - Current Biology (https://www.cell.com/current-biology/newarticles)
 
 ## Instructions for the Agent
-## Important Agent Instructions
-- **NEVER use the browser_subagent** or open the browser to fetch papers.
-- ALWAYS use the  or  tool from the Firecrawl MCP server. Wait for the server to be available if it's not immediately found.
-
-
 When the user invokes this skill, follow these exact steps:
 
 1. **Scrape Journal Pages:**
-   Use the `firecrawl_scrape` tool to fetch the latest research articles from Current Biology:
-   ```
-   firecrawl_scrape(url="https://www.cell.com/current-biology/newarticles", formats=["markdown"])
-   ```
-   If that returns insufficient content, fall back to `firecrawl_search` with a query like `"site:cell.com/current-biology research article 2026"`.
+   Use the `firecrawl_scrape` tool (or `firecrawl_search`) to fetch the latest research articles from the Current Biology journal.
 
 2. **Filter & Select:**
    Read the scraped content and identify all relevant papers based on the user's core research background. The core research interests to prioritize are:
-   - **DNA/Biological Language Models (Foundation Models):** applications to genomics, cross-species analysis, evolution, and population genetics/genomics.
-   - **Plant Genomics and Evolution:** crop genomics, regulatory elements, whole-genome duplication, speciation, adaptation.
-   - **AI/Deep Learning Methods in Biology:** novel architectures applied to bioinformatics, sequence modeling, comparative genomics.
-   - **Evolutionary Genomics:** phylogenomics, genome evolution, selection, polyploidy, population genomics.
+   - **Abiotic Stress:** especially cold tolerance in plants.
+   - **Plant Physiology:** photosynthesis and related traits.
+   - **Plant Development:** inflorescence development.
+   - **Single-Cell & Spatial Omics:** single-cell transcriptomics and spatial transcriptomics in plants.
+   - **Crop Improvement:** yield related traits, especially in maize.
    - **RECENCY CONSTRAINT:** You MUST ONLY select papers from the most recent publication issue. Do not retrieve or select older papers from past years or previous issues.
 
 3. **Fetch Abstracts:**
@@ -55,7 +47,7 @@ When the user invokes this skill, follow these exact steps:
 ### 1. [Paper Title](https://www.cell.com/current-biology/fulltext/XXXX) - *Current Biology*
 *   **Authors:** Author 1, Author 2, et al.
 *   **Abstract Summary:** [2-3 sentences summarising the abstract and main findings]
-*   **Relevance:** [1 sentence explaining why it aligns with plant genomics or biological AI]
+*   **Relevance:** [1 sentence explaining why it aligns with the user's background like cold tolerance or spatial transcriptomics]
 *   **Link:** [Abstract Page](https://www.cell.com/current-biology/fulltext/XXXX)
 ```
 

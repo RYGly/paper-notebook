@@ -12,15 +12,10 @@ This skill configures the agent to automatically scrape the recent submissions o
 - The **Firecrawl MCP Server** must be running locally (`docker compose up -d`) and configured in the `mcp_config.json`.
 
 ## Instructions for the Agent
-## Important Agent Instructions
-- **NEVER use the browser_subagent** or open the browser to fetch papers.
-- ALWAYS use the  or  tool from the Firecrawl MCP server. Wait for the server to be available if it's not immediately found.
-
-
 When the user invokes this skill, follow these exact steps:
 
-1. **Scrape arXiv:** 
-   Use the `firecrawl_scrape` tool to fetch the recent CS.AI listings from `https://arxiv.org/list/cs.AI/recent`. Request the output format as `markdown` and `onlyMainContent: true`.
+1. **Scrape Journal Pages:** 
+   Use the `firecrawl_scrape` tool (or `firecrawl_search`) to fetch the latest research articles from the arXiv CS.AI journal.
 2. **Filter & Select:** 
    Read the scraped markdown and identify all relevant papers based on the user's core research interests. Unless specified otherwise, assume the interests are: `genomic language model, computational biology, AI agent in biology`.
    - **RECENCY CONSTRAINT:** You MUST ONLY select papers from the most recent daily updates (i.e., submitted or updated within the last few days). Do not retrieve older papers.

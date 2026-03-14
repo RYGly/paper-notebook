@@ -15,32 +15,18 @@ This skill configures the agent to automatically scrape the recent publications 
 - Molecular Biology and Evolution (MBE) (https://academic.oup.com/mbe/issue)
 
 ## Instructions for the Agent
-## Important Agent Instructions
-- **NEVER use the browser_subagent** or open the browser to fetch papers.
-- ALWAYS use the  or  tool from the Firecrawl MCP server. Wait for the server to be available if it's not immediately found.
-
-
 When the user invokes this skill, follow these exact steps:
 
 1. **Scrape Journal Pages:**
-   Use the `firecrawl_scrape` tool to fetch articles from **both** of the following MBE pages:
+   Use the `firecrawl_scrape` tool (or `firecrawl_search`) to fetch the latest research articles from the Molecular Biology and Evolution (MBE) journal.
 
-   a. **Current print issue TOC**:
-   ```
-   firecrawl_scrape(url="https://academic.oup.com/mbe/issue", formats=["markdown"])
-   ```
-
-   b. **Advance Access** (articles published online ahead of print — these never appear in the issue TOC until their print date):
-   ```
-   firecrawl_scrape(url="https://academic.oup.com/mbe/advance-articles", formats=["markdown"])
-   ```
-
-   Combine the article lists from both sources before filtering. If either URL is blocked or returns insufficient content, fall back to `firecrawl_search` with a query like `"site:academic.oup.com/mbe research article 2026"`.
 2. **Filter & Select:** 
    Read the scraped content and identify all relevant papers based on the user's core research background. The core research interests to prioritize are:
-   - **DNA/Biological Language Models (Foundation Models):** applications to genomics, cross-species analysis, evolution, and population genetics/genomics.
-   - **Plant Genomics and Evolution:** crop genomics, regulatory elements, whole-genome duplication.
-   - **AI/Deep Learning Methods in Biology:** novel architectures applied to bioinformatics, RNA-seq, and sequence modeling.
+   - **Abiotic Stress:** especially cold tolerance in plants.
+   - **Plant Physiology:** photosynthesis and related traits.
+   - **Plant Development:** inflorescence development.
+   - **Single-Cell & Spatial Omics:** single-cell transcriptomics and spatial transcriptomics in plants.
+   - **Crop Improvement:** yield related traits, especially in maize.
    - **RECENCY CONSTRAINT:** You MUST ONLY select papers from the most recent publication issue. Do not retrieve or select older papers from past years or previous issues. If using `firecrawl_search`, specifically query for the "latest issue" or current month/year to avoid retrieving older highly-cited papers.
 3. **Fetch Abstracts:** 
    For each relevant paper, use the `firecrawl_scrape` tool to fetch its dedicated abstract page on the MBE website to get the full abstract text and DOI.
@@ -58,7 +44,7 @@ When the user invokes this skill, follow these exact steps:
 ### 1. [Paper Title](https://academic.oup.com/mbe/article/XXXX) - *[Journal Name]*
 *   **Authors:** Author 1, Author 2, etc.
 *   **Abstract Summary:** [2-3 sentences summarising the abstract and main findings]
-*   **Relevance:** [1 sentence explaining why it aligns with plant genomics or biological AI]
+*   **Relevance:** [1 sentence explaining why it aligns with the user's background like cold tolerance or spatial transcriptomics]
 *   **Link:** [Abstract Page](https://academic.oup.com/mbe/article/XXXX)
 ```
 

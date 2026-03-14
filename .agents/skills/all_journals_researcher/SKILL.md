@@ -16,10 +16,12 @@ Run every tracked journal source simultaneously using **parallel browser subagen
 | **C — Preprints** | bioRxiv (5 sections), arXiv (cs.AI, cs.LG, q-bio.GN, q-bio.QM) |
 
 ## Research Interests (applies across all sources)
-- **DNA/Biological Language Models:** applications to genomics, cross-species analysis, evolution, population genetics.
-- **Plant Genomics and Evolution:** crop genomics, regulatory elements, whole-genome duplication, pangenomes, T2T assemblies.
-- **AI/Deep Learning in Biology:** novel architectures for bioinformatics, RNA-seq, sequence modeling, genome annotation.
-- **RECENCY CONSTRAINT:** Only papers from the most recent issue/week. Do not retrieve older papers.
+   - **Abiotic Stress:** especially cold tolerance in plants.
+   - **Plant Physiology:** photosynthesis and related traits.
+   - **Plant Development:** inflorescence development.
+   - **Single-Cell & Spatial Omics:** single-cell transcriptomics and spatial transcriptomics in plants.
+   - **Crop Improvement:** yield related traits, especially in maize.
+   - **RECENCY CONSTRAINT:** Only papers from the most recent issue/week. Do not retrieve older papers.
 
 ---
 

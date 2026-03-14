@@ -6,7 +6,7 @@ description: A research assistant that uses Firecrawl to monitor the latest publ
 # Nature Methods Researcher
 
 ## Purpose
-This skill configures the agent to automatically scrape the recent publications from Nature Methods (nature.com/nmeth) and filter them based on your specific research expertise in plant genetics, DNA language models, and machine learning.
+This skill configures the agent to automatically scrape the recent publications from Nature Methods (nature.com/nmeth) and filter them based on your specific research expertise in cold tolerance, photosynthesis, inflorescence development, single-cell in plants, spatial transcriptome in plants, and yield related traits in maize.
 
 ## Prerequisites
 - The **Firecrawl MCP Server** must be running locally and configured in `.mcp.json`.
@@ -15,29 +15,18 @@ This skill configures the agent to automatically scrape the recent publications 
 - Nature Methods (https://www.nature.com/nmeth/articles?type=article)
 
 ## Instructions for the Agent
-## Important Agent Instructions
-- **NEVER use the browser_subagent** or open the browser to fetch papers.
-- ALWAYS use the  or  tool from the Firecrawl MCP server. Wait for the server to be available if it's not immediately found.
-
-
 When the user invokes this skill, follow these exact steps:
 
 1. **Scrape Journal Pages:**
-   Try scraping the latest articles:
-   ```
-   firecrawl_scrape(url="https://www.nature.com/nmeth/articles?type=article", formats=["markdown"])
-   ```
-   If blocked or insufficient, fall back to `firecrawl_search` with:
-   ```
-   site:nature.com/nmeth 2026 genomics OR sequencing OR language model OR deep learning
-   ```
+   Use the `firecrawl_scrape` tool (or `firecrawl_search`) to fetch the latest research articles from the Nature Methods journal.
 
 2. **Filter & Select:**
    Read the scraped content and identify all relevant papers based on the user's core research background. The core research interests to prioritize are:
-   - **Computational/AI Methods for Genomics:** new tools for sequence analysis, variant calling, genome annotation, or multi-omics.
-   - **DNA/Biological Language Models:** new model architectures or training approaches for biological sequences.
-   - **Sequencing and Assembly Technologies:** long-read, single-cell, spatial, or other next-generation sequencing methods applicable to plant or population genomics.
-   - **Deep Learning in Biology:** novel neural network approaches for biological data analysis.
+   - **Abiotic Stress:** especially cold tolerance in plants.
+   - **Plant Physiology:** photosynthesis and related traits.
+   - **Plant Development:** inflorescence development.
+   - **Single-Cell & Spatial Omics:** single-cell transcriptomics and spatial transcriptomics in plants.
+   - **Crop Improvement:** yield related traits, especially in maize.
    - **RECENCY CONSTRAINT:** You MUST ONLY select papers from the most recent publication issue. Do not retrieve or select older papers from past years or previous issues.
 
 3. **Fetch Abstracts:**
@@ -58,7 +47,7 @@ When the user invokes this skill, follow these exact steps:
 ### 1. [Paper Title](https://www.nature.com/articles/XXXX) - *Nature Methods*
 *   **Authors:** Author 1, Author 2, et al.
 *   **Abstract Summary:** [2-3 sentences summarising the abstract and main findings]
-*   **Relevance:** [1 sentence explaining why it aligns with plant genomics or biological AI]
+*   **Relevance:** [1 sentence explaining why it aligns with the user's background like cold tolerance or spatial transcriptomics]
 *   **Link:** [Abstract Page](https://www.nature.com/articles/XXXX)
 ```
 

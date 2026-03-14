@@ -6,7 +6,7 @@ description: A research assistant that uses Firecrawl to monitor the latest publ
 # Genome Research Researcher
 
 ## Purpose
-This skill configures the agent to automatically scrape the recent publications from Genome Research (genome.cshlp.org) and filter them based on your specific research expertise in plant genetics, DNA language models, and machine learning.
+This skill configures the agent to automatically scrape the recent publications from Genome Research (genome.cshlp.org) and filter them based on your specific research expertise in cold tolerance, photosynthesis, inflorescence development, single-cell in plants, spatial transcriptome in plants, and yield related traits in maize.
 
 ## Prerequisites
 - The **Firecrawl MCP Server** must be running locally (`docker compose up -d`) and configured in the `mcp_config.json`.
@@ -21,34 +21,18 @@ Genome Research is hosted on Cold Spring Harbor Laboratory Press (CSHL Press). I
 ```
 
 ## Instructions for the Agent
-## Important Agent Instructions
-- **NEVER use the browser_subagent** or open the browser to fetch papers.
-- ALWAYS use the  or  tool from the Firecrawl MCP server. Wait for the server to be available if it's not immediately found.
-
-
 When the user invokes this skill, follow these exact steps:
 
 1. **Scrape Journal Pages:**
-   Use the `firecrawl_scrape` tool to fetch articles from **both** of the following Genome Research pages:
-
-   a. **Current print issue TOC**:
-   ```
-   firecrawl_scrape(url="https://genome.cshlp.org/content/current", formats=["markdown"])
-   ```
-
-   b. **Advance Online** (articles published online ahead of print — these never appear in the issue TOC until their print date):
-   ```
-   firecrawl_scrape(url="https://genome.cshlp.org/content/early/recent", formats=["markdown"])
-   ```
-
-   Combine the article lists from both sources before filtering. If either URL is blocked, fall back to `firecrawl_search` targeting recent articles: `"site:genome.cshlp.org 2026" plant genomics OR language model OR deep learning`.
+   Use the `firecrawl_scrape` tool (or `firecrawl_search`) to fetch the latest research articles from the Genome Research journal.
 
 2. **Filter & Select:**
    Read the scraped content and identify all relevant papers based on the user's core research background. The core research interests to prioritize are:
-   - **DNA/Biological Language Models (Foundation Models):** applications to genomics, cross-species analysis, evolution, and population genetics/genomics.
-   - **Plant Genomics and Evolution:** crop genomics, regulatory elements, whole-genome duplication, pangenomes.
-   - **AI/Deep Learning Methods in Biology:** novel architectures applied to bioinformatics, RNA-seq, sequence modeling, genome annotation.
-   - **Genome Assembly and Annotation:** T2T assemblies, long-read sequencing, structural variants, transposable elements.
+   - **Abiotic Stress:** especially cold tolerance in plants.
+   - **Plant Physiology:** photosynthesis and related traits.
+   - **Plant Development:** inflorescence development.
+   - **Single-Cell & Spatial Omics:** single-cell transcriptomics and spatial transcriptomics in plants.
+   - **Crop Improvement:** yield related traits, especially in maize.
    - **RECENCY CONSTRAINT:** You MUST ONLY select papers from the most recent publication issue. Do not retrieve or select older papers from past years or previous issues.
 
 3. **Fetch Abstracts:**
@@ -69,7 +53,7 @@ When the user invokes this skill, follow these exact steps:
 ### 1. [Paper Title](https://genome.cshlp.org/content/XXXX) - *Genome Research*
 *   **Authors:** Author 1, Author 2, et al.
 *   **Abstract Summary:** [2-3 sentences summarising the abstract and main findings]
-*   **Relevance:** [1 sentence explaining why it aligns with plant genomics or biological AI]
+*   **Relevance:** [1 sentence explaining why it aligns with the user's background like cold tolerance or spatial transcriptomics]
 *   **Link:** [Abstract Page](https://genome.cshlp.org/content/XXXX)
 ```
 

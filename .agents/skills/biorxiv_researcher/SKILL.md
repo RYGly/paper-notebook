@@ -31,16 +31,8 @@ Monitor the latest preprints posted on bioRxiv and surface the most relevant one
 - ALWAYS use the  or  tool from the Firecrawl MCP server. Wait for the server to be available if it's not immediately found.
 
 
-### Step 1 — Scrape RSS Feeds
-Use `firecrawl_scrape` with `formats: ["markdown"]` on the RSS URLs above (scrape all sections in parallel):
-
-```
-firecrawl_scrape(url="https://connect.biorxiv.org/biorxiv_xml.php?subject=bioinformatics", formats=["markdown"])
-firecrawl_scrape(url="https://connect.biorxiv.org/biorxiv_xml.php?subject=genetics", formats=["markdown"])
-firecrawl_scrape(url="https://connect.biorxiv.org/biorxiv_xml.php?subject=evolutionary-biology", formats=["markdown"])
-firecrawl_scrape(url="https://connect.biorxiv.org/biorxiv_xml.php?subject=genomics", formats=["markdown"])
-firecrawl_scrape(url="https://connect.biorxiv.org/biorxiv_xml.php?subject=plant-biology", formats=["markdown"])
-```
+### Step 1 — Scrape Journal Pages
+Use the `firecrawl_scrape` tool (or `firecrawl_search`) to fetch the latest research articles from the bioRxiv RSS feeds.
 
 Each RSS feed returns ~30 recent entries. Each entry includes: **title**, **abstract** (in `<description>`), **authors** (in `<dc:creator>`), **DOI** (in `<dc:identifier>`), and **date** (in `<dc:date>`).
 
