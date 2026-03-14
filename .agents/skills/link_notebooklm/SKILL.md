@@ -150,7 +150,7 @@ python3 .agents/skills/link_notebooklm/scripts/update_notebooklm.py \
 ### Step 7 — Commit and push
 
 ```bash
-cd /Users/zhaijj/Documents/00PostDoc/Buckler_lab/GitHub/paper-notebook
+cd "/Users/yl3956/Personal Information/paper-notebook"
 git add docs/js/papers.json
 git commit -m "feat: link NotebookLM notes to {paper_id}"
 git push origin main
@@ -164,7 +164,7 @@ Report back:
 - Whether a new paper was created or an existing one was updated
 - Paper title + id
 - Preview of first few lines of extracted notes
-- Live site URL: `https://zhaijj.github.io/jingjing-paper-notebook/` (updates in ~1 min)
+- Live site URL: `https://rygly.github.io/paper-notebook/` (updates in ~1 min)
 
 ---
 

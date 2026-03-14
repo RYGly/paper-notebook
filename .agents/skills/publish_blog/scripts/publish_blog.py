@@ -176,7 +176,7 @@ POST_TEMPLATE = """\
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{title} | Jingjing's Paper Notebook</title>
+  <title>{title} | Paper Notebook</title>
   <meta name="description" content="{description}" />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/blog.css" />
@@ -196,13 +196,13 @@ POST_TEMPLATE = """\
         <div class="logo-icon">📚</div>
         <div>
           <span class="logo-text">Paper Notebook</span>
-          <span class="logo-sub">Jingjing Zhai</span>
+          <span class="logo-sub">RYGly</span>
         </div>
       </a>
       <ul class="nav-links">
         <li><a href="../index.html">Home</a></li>
         <li><a href="../blog.html" class="nav-active">Blog</a></li>
-        <li><a href="https://github.com/zhaijj/paper-notebook" target="_blank">GitHub</a></li>
+        <li><a href="https://github.com/RYGly/paper-notebook" target="_blank">GitHub</a></li>
         <li>
           <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode">
             <span class="toggle-icon">🌙</span>
@@ -223,7 +223,7 @@ POST_TEMPLATE = """\
       <h1>{title}</h1>
       <p>{description}</p>
       <div style="margin-top:1rem;font-size:0.875rem;color:var(--text-dim);">
-        {date} · by Jingjing Zhai
+        {date} · by RYGly
       </div>
     </div>
   </header>
@@ -240,9 +240,9 @@ POST_TEMPLATE = """\
   <footer class="footer">
     <div class="container">
       <p>
-        Maintained by <a href="https://github.com/zhaijj" target="_blank">Jingjing Zhai</a> ·
+        Maintained by <a href="https://github.com/RYGly" target="_blank">RYGly</a> ·
         Built with 💚 and plain HTML ·
-        <a href="https://github.com/zhaijj/paper-notebook" target="_blank">View on GitHub</a>
+        <a href="https://github.com/RYGly/paper-notebook" target="_blank">View on GitHub</a>
       </p>
     </div>
   </footer>

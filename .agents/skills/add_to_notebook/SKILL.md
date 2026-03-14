@@ -89,7 +89,7 @@ The script will:
 
 ### Step 4 — Commit and Push
 ```bash
-cd /Users/zhaijj/Documents/00PostDoc/Buckler_lab/GitHub/jingjing-paper-notebook
+cd "/Users/yl3956/Personal Information/paper-notebook"
 git add docs/js/papers.json
 git commit -m "feat: add {n} paper(s) from {source} — {date}"
 git push origin main
@@ -101,7 +101,7 @@ Where `{n}` is the count of added papers, `{source}` is the skill used (e.g. "Na
 Report back:
 - How many papers were added vs. skipped (duplicates)
 - The new total paper count
-- A reminder that the live site at `https://zhaijj.github.io/jingjing-paper-notebook/` will update in ~1 minute
+- A reminder that the live site at `https://rygly.github.io/paper-notebook/` will update in ~1 minute
 
 ## Important Notes
 - **Never overwrite** `papers.json` — always append.

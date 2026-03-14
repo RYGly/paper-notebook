@@ -52,7 +52,7 @@ If any required fields are missing from front-matter AND the user didn't provide
 ### Step 2 — Run the Publisher Script
 
 ```bash
-cd /Users/zhaijj/Documents/00PostDoc/Buckler_lab/GitHub/paper-notebook
+cd "/Users/yl3956/Personal Information/paper-notebook"
 
 python3 .agents/skills/publish_blog/scripts/publish_blog.py \
   --markdown "/ABSOLUTE/PATH/TO/post.md" \
@@ -60,7 +60,7 @@ python3 .agents/skills/publish_blog/scripts/publish_blog.py \
   --description "One-sentence description" \
   --tags "tag1,tag2,tag3" \
   --date "YYYY-MM-DD" \
-  --repo-root "/Users/zhaijj/Documents/00PostDoc/Buckler_lab/GitHub/paper-notebook"
+  --repo-root "/Users/yl3956/Personal Information/paper-notebook"
 ```
 
 The script will:
@@ -71,7 +71,7 @@ The script will:
 ### Step 3 — Commit and Push
 
 ```bash
-cd /Users/zhaijj/Documents/00PostDoc/Buckler_lab/GitHub/paper-notebook
+cd "/Users/yl3956/Personal Information/paper-notebook"
 
 git add docs/posts/ docs/js/blogs.json docs/blog.html
 git commit -m "feat: publish blog post — {title} ({date})"
@@ -81,7 +81,7 @@ git push
 ### Step 4 — Confirm to User
 
 Report back:
-- The slug/URL of the new post: `https://zhaijj.github.io/paper-notebook/posts/{slug}.html`
+- The slug/URL of the new post: `https://rygly.github.io/paper-notebook/posts/{slug}.html`
 - Total blog posts now live
 - The live site updates in ~1 minute after push
 
