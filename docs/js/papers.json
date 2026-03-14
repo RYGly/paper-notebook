@@ -33,5 +33,42 @@
     "notebooklm_url": "https://notebooklm.google.com/notebook/31968b4a-9dec-4fd9-9227-11b0a8372e79",
     "notebooklm_notes": "## Key Findings\n\n- **A Novel Mechanism for Non-MADA CNL PM Anchoring**: Unlike canonical CNLs (like ZAR1) that use a MADA motif to penetrate the plasma membrane, **SUMM2 tethers to the PM via N-myristoylation** — a lipid modification essential for its localization and cell death induction.\n- **Activation of the EDS1–PAD4–ADR1s Module**: In its inactive state, SUMM2 sequesters the EDS1–PAD4 complex. Upon activation, EDS1–PAD4 is released to form a multimeric complex with the helper NLR ADR1-L1.\n- **Formation of Higher-Order Resistosome Clusters**: Active SUMM2 induces macroscopic, ring-like ADR1-L1 resistosome clusters (~300–450 nm diameter) at the PM — far larger than individual pentameric/hexameric resistosomes — colocalized with EDS1–PAD4.\n- **A New Stepwise Model for Plant Cell Death**: Proposes a two-step mechanism paralleling mammalian pyroptosis: individual resistosomes permit Ca²⁺ influx, while the large ring-like EDS1–PAD4–ADR1-L1 clusters cause localized membrane disruption analogous to gasdermin/NINJ1 pores.\n\n## Methods Worth Noting\n\n- **TIRF Microscopy + Single-Particle Tracking**: Used to observe lateral mobility and clustering dynamics of ADR1-L1 at the plasma membrane in living plant cells (with Leica THUNDER computational clearing).\n- **FRET-FLIM**: Detected close-proximity interactions between SUMM2, EDS1, PAD4, and ADR1-L1 *in planta*.\n- **Click Chemistry**: Confirmed in vivo N-myristoylation of SUMM2 using a cell-permeable ω-alkynyl fatty acid analog and biotin-PEG3-azide.\n- **Blue Native-PAGE (BN-PAGE)**: Demonstrated SUMM2 activation triggers a shift of ADR1-L1 from small oligomers to massive high-molecular-weight complexes (~1,048 kDa).\n- **SUMM2G2A Mutation**: Disrupting the glycine required for N-myristoylation abrogates PM targeting and cell death, proving the lipid anchor is functionally essential.\n\n## Personal Insights\n\n- **Elegant \"Sequestration\" Guard Mechanism**: SUMM2 acts as a structural trap in its inactive state, sequestering EDS1–PAD4 to prevent premature immune signaling. Activation (possibly via TIR-domain-generated nucleotide signals) releases EDS1–PAD4 to complex with ADR1-L1.\n- **Evolutionary Workarounds for Membrane Targeting**: Group I CNLs (MADA motif) physically penetrate the bilayer with a hydrophobic α1-helix; Group II CNLs (like SUMM2) instead rely on post-translational N-myristoylation for PM proximity — a beautiful evolutionary divergence achieving the same functional outcome.\n- **Convergent Evolution with Mammalian Pyroptosis**: The 300–450 nm ring-like ADR1-L1 clusters strongly evoke mammalian NINJ1/gasdermin structures, suggesting macroscopic membrane excision may be a universal principle for programmed lytic cell death.\n- **Future Direction**: Investigating whether nicotinamide (NAM), which impairs EDS1–PAD4 release from active SUMM2, points to TIR NADase activity as a universal metabolic trigger for dismantling inactive NLR complexes across plant species.",
     "updatedDate": "2026-03-14"
+  },
+  {
+    "id": "li2026phytobabel",
+    "title": "Deep learning-based semantic matching of cis-regulatory DNA sequences facilitates the prediction of gene function",
+    "authors": [
+      "Tianyi Li",
+      "Hui Xu",
+      "Mingrui Suo",
+      "Mingchi Xu",
+      "Xiangxin Li",
+      "Luyuan Yang",
+      "Revocatus Bahitwa",
+      "Shouzhen Teng",
+      "Baoxing Song",
+      "Aalt Dirk Jan van Dijk",
+      "Hai Wang"
+    ],
+    "journal": "Nature Plants",
+    "year": 2026,
+    "doi": "10.1038/s41477-026-02231-w",
+    "tags": [
+      "machine learning",
+      "deep learning",
+      "DNA language model",
+      "cis-regulation",
+      "gene function",
+      "semantic matching",
+      "maize"
+    ],
+    "rating": 5,
+    "abstract": "The rich information encoded in cis-regulatory DNA sequences has not been fully exploited for gene function prediction in reverse genetics. Here we show that orthologous cis-regulatory sequences that diverged approximately 160 million years ago share little sequence similarity, yet remarkably retain semantic similarity that can be effectively captured by a deep learning model, PhytoBabel. Although trained solely on orthologous cis-regulatory sequence pairs from 15 angiosperms, PhytoBabel implicitly learned spatio-temporal gene expression patterns, conserved noncoding sequences, semantically similar fragments and phylogenetic relationships among species. Furthermore, PhytoBabel enables the discovery of evolutionarily unrelated but semantically similar cis-regulatory sequences, facilitating the identification of novel genes with functions of interest. As a proof of concept, we identified somatic embryogenesis-related morphogenic regulators in maize that exhibit semantic similarity to known Arabidopsis morphogenic regulators. By bridging the gap in the cis-regulatory sequence → semantics → gene function information chain, PhytoBabel provides a valuable tool for gene function prediction in reverse genetics.",
+    "notes": "## Key Findings\n\n- **PhytoBabel Deep Learning Model**: Developed to capture semantic similarity in cis-regulatory DNA sequences across distant plant species (diverged ~160 Mya), overcoming the lack of direct sequence conservation.\n- **Implicit Feature Learning**: Despite being trained merely on orthologous cis-regulatory sequence pairs from 15 angiosperms, the model implicitly learned spatio-temporal expression patterns, conserved noncoding sequences (CNS), and phylogenetic relationships.\n- **Cross-Species Gene Discovery**: Enabled the discovery of functionally equivalent but evolutionarily unrelated genes based purely on promoter semantics, successfully identifying novel somatic embryogenesis regulators in maize based on Arabidopsis models.\n\n## Methods Worth Noting\n\n- **Semantic Matching Approach**: Training neural networks on orthologous sequence pairs to extract abstract \"semantics\" rather than relying on strict motif matching or sequence alignment.\n- **Cross-Species Validation**: Validated model predictions by identifying and experimentally verifying morphogenic regulators in crop species (maize) based on semantic matches to model organisms (Arabidopsis).",
+    "addedDate": "2026-03-14",
+    "source": "Nature Plants",
+    "notebooklm_url": "",
+    "notebooklm_notes": "",
+    "updatedDate": "2026-03-14"
   }
 ]
